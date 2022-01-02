@@ -1,6 +1,7 @@
 import os
 import tarfile
 import glob
+from math import isnan
 
 import pandas as pd
 
@@ -159,55 +160,55 @@ class Collision(RawCollision):
 
     def __init__(self, **kwargs):
         self.DCA_code = kwargs['DCA_code']
-        self.animals = kwargs['animals']
+        self.animals = int(kwargs['animals']) if not isnan(kwargs['animals']) else None
         self.approximate = kwargs['approximate']
-        self.bicycle = kwargs['bicycle']
-        self.bus = kwargs['bus']
-        self.car_4x4 = kwargs['car_4x4']
-        self.car_sedan = kwargs['car_sedan']
-        self.car_station_wagon = kwargs['car_station_wagon']
-        self.car_utility = kwargs['car_utility']
-        self.car_van = kwargs['car_van']
-        self.casualties = kwargs['casualties']
+        self.bicycle = int(kwargs['bicycle']) if not isnan(kwargs['bicycle']) else None
+        self.bus = int(kwargs['bus']) if not isnan(kwargs['bus']) else None
+        self.car_4x4 = int(kwargs['car_4x4']) if not isnan(kwargs['car_4x4']) else None
+        self.car_sedan = int(kwargs['car_sedan']) if not isnan(kwargs['car_sedan']) else None
+        self.car_station_wagon = int(kwargs['car_station_wagon']) if not isnan(kwargs['car_station_wagon']) else None
+        self.car_utility = int(kwargs['car_utility']) if not isnan(kwargs['car_utility']) else None
+        self.car_van = int(kwargs['car_van']) if not isnan(kwargs['car_van']) else None
+        self.casualties = int(kwargs['casualties']) if not isnan(kwargs['casualties']) else None
         self.comment = kwargs['comment']
         self.country = kwargs['country']
         self.crash_id = kwargs['crash_id']
         self.crash_type = kwargs['crash_type']
         self.day_of_month = kwargs['day_of_month']
-        self.day_of_week = kwargs['day_of_week']
+        self.day_of_week = int(kwargs['day_of_week']) if not isnan(kwargs['day_of_week']) else None
         self.description_id = kwargs['description_id']
         self.drugs_alcohol = kwargs['drugs_alcohol']
-        self.fatalities = kwargs['fatalities']
-        self.hour = kwargs['hour']
-        self.inanimate = kwargs['inanimate']
+        self.fatalities = int(kwargs['fatalities']) if not isnan(kwargs['fatalities']) else None
+        self.hour = int(kwargs['hour']) if not isnan(kwargs['hour']) else None
+        self.inanimate = int(kwargs['inanimate']) if not isnan(kwargs['inanimate']) else None
         self.intersection = kwargs['intersection']
         self.latitude = kwargs['latitude']
         self.lighting = kwargs['lighting']
         self.local_government_area = kwargs['local_government_area']
         self.longitude = kwargs['longitude']
         self.midblock = kwargs['midblock']
-        self.minor_injuries = kwargs['minor_injuries']
-        self.month = kwargs['month']
-        self.motor_cycle = kwargs['motor_cycle']
-        self.pedestrian = kwargs['pedestrian']
+        self.minor_injuries = int(kwargs['minor_injuries']) if not isnan(kwargs['minor_injuries']) else None
+        self.month = int(kwargs['month']) if not isnan(kwargs['month']) else None
+        self.motor_cycle = int(kwargs['motor_cycle']) if not isnan(kwargs['motor_cycle']) else None
+        self.pedestrian = int(kwargs['pedestrian']) if not isnan(kwargs['pedestrian']) else None
         self.road_position_horizontal = kwargs['road_position_horizontal']
         self.road_position_vertical = kwargs['road_position_vertical']
         self.road_sealed = kwargs['road_sealed']
         self.road_wet = kwargs['road_wet']
-        self.scooter = kwargs['scooter']
-        self.serious_injuries = kwargs['serious_injuries']
+        self.scooter = int(kwargs['scooter']) if not isnan(kwargs['scooter']) else None
+        self.serious_injuries = int(kwargs['serious_injuries']) if not isnan(kwargs['serious_injuries']) else None
         self.severity = kwargs['severity']
         self.speed_limit = kwargs['speed_limit']
         self.state = kwargs['state']
         self.statistical_area = kwargs['statistical_area']
         self.suburb = kwargs['suburb']
-        self.taxi = kwargs['taxi']
+        self.taxi = int(kwargs['taxi']) if not isnan(kwargs['taxi']) else None
         self.traffic_controls = kwargs['traffic_controls']
-        self.train = kwargs['train']
-        self.tram = kwargs['tram']
-        self.truck_large = kwargs['truck_large']
-        self.truck_small = kwargs['truck_small']
-        self.vehicle_other = kwargs['vehicle_other']
+        self.train = int(kwargs['train']) if not isnan(kwargs['train']) else None
+        self.tram = int(kwargs['tram']) if not isnan(kwargs['tram']) else None
+        self.truck_large = int(kwargs['truck_large']) if not isnan(kwargs['truck_large']) else None
+        self.truck_small = int(kwargs['truck_small']) if not isnan(kwargs['truck_small']) else None
+        self.vehicle_other = int(kwargs['vehicle_other']) if not isnan(kwargs['vehicle_other']) else None
         self.weather = kwargs['weather']
         self.year = kwargs['year']
 
